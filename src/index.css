@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Welvara Jewelry - Elegant Design System */
+
+@layer base {
+  :root {
+    --background: 40 20% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 97%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 25% 97%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 35 60% 45%;
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 30 10% 15%;
+
+    --muted: 35 20% 94%;
+    --muted-foreground: 30 10% 45%;
+
+    --accent: 35 45% 85%;
+    --accent-foreground: 30 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 20% 98%;
+
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 35 60% 45%;
+
+    --radius: 0.25rem;
+
+    --gold: 43 74% 49%;
+    --gold-light: 43 70% 70%;
+    --gold-dark: 35 60% 35%;
+    --cream: 40 30% 96%;
+    --charcoal: 30 10% 20%;
+
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 35 60% 45%;
+    --sidebar-primary-foreground: 40 20% 98%;
+    --sidebar-accent: 35 30% 92%;
+    --sidebar-accent-foreground: 30 10% 15%;
+    --sidebar-border: 35 25% 88%;
+    --sidebar-ring: 35 60% 45%;
+  }
+
+  .dark {
+    --background: 30 15% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 15% 12%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 30 15% 8%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 30 15% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 30 20% 22%;
+    --accent-foreground: 40 20% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 20% 95%;
+
+    --border: 30 15% 22%;
+    --input: 30 15% 22%;
+    --ring: 43 74% 49%;
+
+    --gold: 43 74% 55%;
+    --gold-light: 43 70% 70%;
+    --gold-dark: 35 60% 40%;
+    --cream: 40 20% 15%;
+    --charcoal: 30 10% 85%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 43 74% 55%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 30 15% 22%;
+    --sidebar-ring: 43 74% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-gold {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+}
